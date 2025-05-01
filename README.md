@@ -16,12 +16,7 @@ The **Vehicle Parking System** is a comprehensive solution designed to manage pa
 - Set pricing for different parking zones
 - View usage reports and statistics
 
-### 3. Payment Integration
-- Support for multiple payment gateways (e.g., credit card, mobile payment)
-- Invoice generation for parking transactions
-- Payment reminders for upcoming parking charges
-
-### 4. Real-Time Parking Availability
+### 3. Real-Time Parking Availability
 - Live tracking of available parking spots across the system
 - Reserve spots in real-time based on availability
 - Notifications for spot availability or changes
