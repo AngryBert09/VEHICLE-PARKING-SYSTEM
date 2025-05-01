@@ -33,5 +33,5 @@ The **Vehicle Parking System** is a comprehensive solution designed to manage pa
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/vehicle-parking-system.git
+   git clone https://github.com/AngryBert09/VEHICLE-PARKING-SYSTEM.git
    cd vehicle-parking-system
