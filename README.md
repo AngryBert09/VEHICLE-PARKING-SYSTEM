@@ -1,6 +1,18 @@
 # 🚗 Vehicle Parking System
 
-The **Vehicle Parking System** is a comprehensive solution designed to manage parking spaces, track vehicle entries and exits, and automate the entire parking process. It provides efficient parking management for both users and administrators by allowing them to reserve spots, make payments, and track usage in real-time.
+[![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+---
+
+## 📋 Overview
+
+The **Vehicle Parking System** is a comprehensive web application designed to streamline and automate parking lot operations. It manages parking space availability, tracks vehicle entry/exit times, handles payments, and provides real-time reporting and control for administrators.
+
+---
 
 ## 🚙 Key Features
 
@@ -33,6 +45,16 @@ The **Vehicle Parking System** is a comprehensive solution designed to manage pa
 
 1. **Clone the repository**
    
+  
+```bash
+    git clone https://github.com/AngryBert09/VEHICLE-PARKING-SYSTEM.git
+    cd vehicle-parking-system
+```
+
+2. **Install the dependencies**
+   
    ```bash
-   git clone https://github.com/AngryBert09/VEHICLE-PARKING-SYSTEM.git
-   cd vehicle-parking-system
+    composer install
+```
+
+   
