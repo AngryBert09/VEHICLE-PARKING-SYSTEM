@@ -12,18 +12,18 @@ class DashboardController extends Controller
 
     public function index()
     {
-        // Retrieve all parking records, sorted by check_out in descending order
-        $parkings = Parking::orderBy('check_out', 'desc')->get();
+        // Eager load only necessary relationships (if any), and select only needed columns
+        $parkings = Parking::latest('check_out')->select('id', 'vehicle_plate', 'check_in', 'check_out', 'total_amount')->get();
 
-        // Retrieve all parking lots, including their status and availability
-        $parkingLots = ParkingLot::all();
+        // Consider selecting only the necessary columns to reduce query load
+        $parkingLots = ParkingLot::select('id', 'name', 'status', 'availability')->get();
 
-        // Calculate the total amount from the Parking table
+        // Aggregate total_amount directly without loading all records
         $totalAmount = Parking::sum('total_amount');
 
-        // Pass the sorted parkings, all parking lots, and the total amount to the view
         return view('admin.dashboard', compact('parkings', 'parkingLots', 'totalAmount'));
     }
+
 
 
 
