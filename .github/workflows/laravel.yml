@@ -8,22 +8,23 @@ on:
 
 jobs:
   laravel-tests:
-
     runs-on: ubuntu-latest
 
     services:
       mysql:
         image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD:
-          MYSQL_DATABASE: parkingdb
         ports:
           - 3306:3306
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: parkingdb
+          MYSQL_USER: root
+          MYSQL_PASSWORD:
         options: >-
-          --health-cmd="mysqladmin ping"
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=3
+          --health-retries=10
 
     steps:
       - name: Checkout code
@@ -33,16 +34,22 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          extensions: mbstring, bcmath, xml, ctype, json, mysql, pdo, tokenizer
 
       - name: Copy .env
         run: cp .env.example .env
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --no-progress --prefer-dist
 
       - name: Generate app key
         run: php artisan key:generate
+
+      - name: Wait for MySQL to be ready
+        run: |
+          echo "Waiting for MySQL..."
+          until mysqladmin ping -h 127.0.0.1 -uroot -proot --silent; do
+            sleep 3
+          done
 
       - name: Run migrations
         env:
