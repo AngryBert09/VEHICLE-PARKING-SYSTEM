@@ -47,14 +47,11 @@ The **Vehicle Parking System** is a comprehensive web application designed to st
    
   
 ```bash
-    git clone https://github.com/AngryBert09/VEHICLE-PARKING-SYSTEM.git
-    cd vehicle-parking-system
+ git clone https://github.com/AngryBert09/VEHICLE-PARKING-SYSTEM.git
+ cd vehicle-parking-system
 ```
 
 2. **Install the dependencies**
    
-   ```bash
-    composer install
-```
-
-   
+ ```bash
+  composer install
